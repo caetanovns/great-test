@@ -14,6 +14,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 public class InseDTO {
     private Integer saebYear;
     private Integer ufCod;
+    private String uf;
     private String ufName;
     private Integer cityCode;
     private String cityName;

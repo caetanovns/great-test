@@ -23,6 +23,9 @@ public class Inse {
     @Field("CO_UF")
     private Integer ufCod;
 
+    @Field("SG_UF")
+    private String uf;
+
     @Field("NO_UF")
     private String ufName;
 

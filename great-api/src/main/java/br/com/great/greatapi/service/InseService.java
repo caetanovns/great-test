@@ -20,6 +20,7 @@ public class InseService {
     private InseRepository inseRepository;
 
     public List<InseDTO> readAll() {
-        return inseRepository.findAll().stream().limit(5).map(p -> modelMapper.map(p, InseDTO.class)).collect(Collectors.toList());
+        //return inseRepository.findBy().stream().limit(5).map(p -> modelMapper.map(p, InseDTO.class)).collect(Collectors.toList());
+        return inseRepository.findByCityName("Crato").stream().map(p -> modelMapper.map(p, InseDTO.class)).collect(Collectors.toList());
     }
 }
