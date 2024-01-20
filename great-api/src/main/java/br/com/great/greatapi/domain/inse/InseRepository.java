@@ -11,4 +11,6 @@ public interface InseRepository extends MongoRepository<Inse, Long> {
     List<Inse> findByuf(String uf);
 
     List<Inse> findByCityName(String name);
+
+    Inse findById   (String id);
 }
