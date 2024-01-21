@@ -12,6 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 @Getter
 @Setter
 public class InseDTO {
+    private String id;
     private Integer saebYear;
     private Integer ufCod;
     private String uf;
