@@ -25,7 +25,7 @@ public class InseRepositoryImpl implements InseRepositoryCustom {
         }
 
         if (uf != null) {
-            query.addCriteria(Criteria.where("NO_UF").regex(uf, "i"));
+            query.addCriteria(Criteria.where("SG_UF").regex(uf, "i"));
         }
 
         return this.mongoTemplate.find(query, Inse.class);
