@@ -9,6 +9,8 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 import static ch.qos.logback.core.joran.JoranConstants.NULL;
 
 @RestController
@@ -20,12 +22,12 @@ public class InseController {
     private InseService inseService;
 
     @GetMapping
-    public ResponseEntity<Page<InseDTO>> findAll(@PageableDefault(size = 10) Pageable pageable,
+    public ResponseEntity<List<InseDTO>> findAll(@PageableDefault(size = 10) Pageable pageable,
                                                  @RequestParam(required = false) String city,
                                                  @RequestParam(required = false) String school,
                                                  @RequestParam(required = false) String uf
     ) {
-        return ResponseEntity.ok(inseService.readAll(pageable, city));
+        return ResponseEntity.ok(inseService.readAll(pageable, city, school, uf));
     }
 
     @GetMapping("/{id}")

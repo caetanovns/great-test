@@ -10,15 +10,6 @@ import java.util.List;
 
 
 @Repository
-public interface InseRepository extends MongoRepository<Inse, Long> {
-    List<Inse> findByuf(String uf);
-
-    List<Inse> findByCityName(String name);
-
+public interface InseRepository extends MongoRepository<Inse, Long>, InseRepositoryCustom {
     Inse findById(String id);
-
-
-    @Query("{'NO_MUNICIPIO' :  { $regex:  ?0, $options:  'i'}}")
-    Page<Inse> findAllByCity(Pageable pageable, String city);
-
 }
