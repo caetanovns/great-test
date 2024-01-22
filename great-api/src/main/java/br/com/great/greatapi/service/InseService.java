@@ -22,7 +22,7 @@ public class InseService {
     @Autowired
     private InseRepository inseRepository;
 
-    public List<InseDTO> readAll(Pageable pageable, String city, String school, String uf) {
+    public List<InseDTO> readAll(String city, String school, String uf) {
         return inseRepository.customQuery(city, school, uf).stream().map(p -> modelMapper.map(p, InseDTO.class)).collect(Collectors.toList());
     }
 

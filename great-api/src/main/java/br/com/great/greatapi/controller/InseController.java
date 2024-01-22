@@ -20,12 +20,11 @@ public class InseController {
     private InseService inseService;
 
     @GetMapping
-    public ResponseEntity<List<InseDTO>> findAll(@PageableDefault(size = 10) Pageable pageable,
-                                                 @RequestParam(required = false) String city,
+    public ResponseEntity<List<InseDTO>> findAll(@RequestParam(required = false) String city,
                                                  @RequestParam(required = false) String school,
                                                  @RequestParam(required = false) String uf
     ) {
-        return ResponseEntity.ok(inseService.readAll(pageable, city, school, uf));
+        return ResponseEntity.ok(inseService.readAll(city, school, uf));
     }
 
     @GetMapping("/resume")
